@@ -1,0 +1,14 @@
+.default-demo{
+    height: 500px;
+    
+    .custom-cy{
+        margin-top: 16px;
+        height: calc(100% - 50px);
+        background: #efefef;
+    }
+}
+
+.simple-demo{
+    height: 400px;
+    background: #efefef;
+}
