@@ -4,7 +4,7 @@ import cytoscape from 'cytoscape'
 import { ICytoscapeProps } from './Cytoscape.types'
 import './Cytoscape.scss'
 
-export default class Cytoscape extends React.Component<ICytoscapeProps> {
+export class Cytoscape extends React.Component<ICytoscapeProps> {
   public cy: cytoscape.Core
   private _cyContainerRef: React.RefObject<HTMLDivElement>
 
