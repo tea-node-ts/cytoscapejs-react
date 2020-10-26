@@ -9,7 +9,7 @@ module.exports = merge(common, {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
-        library: 'Cytoscape',
+        library: 'cytoscapejs-react',
         libraryTarget: 'umd',
     },
     devtool: 'inline-source-map',

@@ -35,9 +35,9 @@ export const event = ({ className, onInit, onClick, onDblClick, onCxtTap }) => {
             <Cytoscape
                 className={className}
                 onInit={cy => onInit(cy.json())}
-                onClick={(event, eventFrom) => onClick(event, eventFrom)}
-                onDblClick={(event, eventFrom) => onDblClick(event, eventFrom)}
-                onCxtTap={(event, eventFrom) => onCxtTap(event, eventFrom)}
+                onClick={({ event, eventFrom }) => onClick(event, eventFrom)}
+                onDblClick={({ event, eventFrom }) => onDblClick(event, eventFrom)}
+                onCxtTap={({ event, eventFrom }) => onCxtTap(event, eventFrom)}
                 elements={elements}
             />
         </div>
