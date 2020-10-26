@@ -1,6 +1,6 @@
 {
   "name": "cytoscapejs-react",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "cytoscapejs-react",
   "author": "jason-bai",
   "license": "ISC",
@@ -18,7 +18,7 @@
     "npm": ">=5"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rm -fr ./dist && rollup -c",
     "start": "rollup -c -w"
   },
   "dependencies": {
