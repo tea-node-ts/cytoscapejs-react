@@ -1,10 +1,10 @@
 import React from 'react'
 import classNames from 'classnames'
 import cytoscape from 'cytoscape'
-import { ICytoscapeProps } from './Cytoscape.types'
-import './Cytoscape.scss'
+import { ICytoscapeProps } from '../typings/CytoscapeJSReact.types'
+import '../scss/index.scss'
 
-export class Cytoscape extends React.Component<ICytoscapeProps> {
+export class CytoscapeJSReact extends React.Component<ICytoscapeProps> {
   public cy: cytoscape.Core
   private _cyContainerRef: React.RefObject<HTMLDivElement>
 

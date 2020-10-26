@@ -1,1 +1,1 @@
-export * from './Cytoscape'
+export * from './components/CytoscapeJSReact'

@@ -11,7 +11,8 @@ export default {
       format: 'cjs',
       exports: 'named',
       sourcemap: true,
-      strict: false
+      strict: false,
+      name: pkg.name
     }
   ],
   plugins: [sass({ insert: true }), typescript()],

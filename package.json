@@ -1,6 +1,6 @@
 {
   "name": "cytoscapejs-react",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "cytoscapejs-react",
   "author": "jason-bai",
   "license": "ISC",
@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/tea-node-ts/cytoscapejs-react#readme",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
