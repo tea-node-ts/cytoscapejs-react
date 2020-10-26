@@ -1,120 +1,55 @@
 {
   "name": "cytoscapejs-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "cytoscapejs-react",
-  "main": "dist/index.js",
-  "typings": "dist/index.js",
-  "scripts": {
-    "eslint": "eslint --ext .tsx,.ts --fix ./src",
-    "build": "rm -fr ./dist && webpack --config webpack.build.js -p --bail",
-    "storybook": "start-storybook -p 6006",
-    "build:storybook": "build-storybook",
-    "prepare": "npm run eslint"
-  },
+  "author": "jason-bai",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tea-node-ts/cytoscapejs-react.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/tea-node-ts/cytoscapejs-react/issues"
   },
   "homepage": "https://github.com/tea-node-ts/cytoscapejs-react#readme",
+  "main": "dist/index.js",
   "engines": {
-    "node": ">=12.0.0",
-    "npm": ">=6"
+    "node": ">=8",
+    "npm": ">=5"
   },
-  "peerDependencies": {
-    "antd": "^3.22.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-actions": "^6.0.3",
-    "@storybook/addon-console": "^1.2.1",
-    "@storybook/addon-docs": "^6.0.27",
-    "@storybook/addon-essentials": "^6.0.3",
-    "@storybook/addon-links": "^6.0.3",
-    "@storybook/addons": "^6.0.27",
-    "@storybook/preset-scss": "^1.0.2",
-    "@storybook/react": "^6.0.3",
-    "@teamsupercell/typings-for-css-modules-loader": "^2.2.0",
-    "@types/enzyme": "^3.10.3",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/prop-types": "^15.7.2",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-router": "^5.0.3",
-    "@types/react-router-dom": "^5.1.5",
-    "@typescript-eslint/eslint-plugin": "^3.9.0",
-    "@typescript-eslint/parser": "^3.9.0",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-react-css-modules": "^5.2.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.0.3",
-    "core-js": "^3.1.4",
-    "css-loader": "^4.2.1",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.4.0",
-    "eslint": "^7.4.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.3",
-    "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "husky": "^4.2.5",
-    "identity-obj-proxy": "^3.0.0",
-    "lint-staged": "^10.2.11",
-    "node-sass": "^4.12.0",
-    "prop-types": "^15.7.2",
-    "react-is": "^16.13.1",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
-    "sass-loader": "^9.0.3",
-    "source-map-loader": "^1.0.1",
-    "standard-version": "^8.0.0",
-    "style-loader": "^1.2.1",
-    "ts-loader": "^8.0.2",
-    "typescript": "^3.6.2",
-    "url-loader": "^4.0.0",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2",
-    "webpack-merge": "^5.2.0",
-    "webpack-node-externals": "^2.5.2",
-    "webpack-serve": "^3.2.0"
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
   },
   "dependencies": {
-    "antd": "^4.5.4",
-    "classnames": "^2.2.6",
-    "cytoscape": "^3.15.2",
-    "cytoscape-d3-force": "^1.1.4",
-    "cytoscape-navigator": "^2.0.1",
-    "cytoscape-panzoom": "^2.5.3",
-    "lodash": "^4.17.20",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "uuid": "^8.3.0"
+    "cytoscape": "^3.16.2",
+    "lodash": "^4.17.20"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "peerDependencies": {
+    "react": ">= 16.8.0 < 2",
+    "react-dom": ">= 16.8.0 < 2"
   },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "npm run eslint",
-      "prettier .prettierrc --write",
-      "git add"
-    ]
-  }
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/cytoscape": "^3.14.8",
+    "@types/lodash": "^4.14.162",
+    "@types/react": "^16.3.13",
+    "@types/react-dom": "^16.0.5",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "typescript": "^2.8.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cytoscape",
+    "react",
+    "typescript"
+  ]
 }

@@ -1,6 +1,7 @@
-.storybook/
-.vscode/
-node_modules/
-src/
-package-lock.json
-storybook-static
+dist
+.babelrc
+.storybook
+.gitignore
+.prettierrc
+rollup.config.js
+tsconfig.json
