@@ -43,16 +43,15 @@ const getEventFrom = eventTarget => {
 const handleClick = event => {
     const eventFrom = getEventFrom(event.target)
 
-    if (!callbackProps.onDblClick && callbackProps.onClick) {
-        // 如果只监听了click事件，执行onClick回调
-        callbackProps.onClick({
-            event,
-            eventFrom
-        })
-        return
-    } else if (!callbackProps.onDblClick) {
-        // 如果没有监听click和dblClick事件，直接返回
-        return
+    if (!callbackProps.onDblClick) {
+        if (callbackProps.onClick) {
+            // 如果只监听了click事件，执行onClick回调
+            callbackProps.onClick({
+                event,
+                eventFrom
+            })
+            return
+        }
     }
 
     // 如果监听了dblClick事件，需要模拟双击事件

@@ -12,9 +12,9 @@ export default {
 
 const defaultElements = {
     nodes: [
-        { group: 'nodes', data: { id: 'a', label: 'apple' }, position: { x: 0, y: 0 } },
-        { group: 'nodes', data: { id: 'b', label: 'banana' }, position: { x: 100, y: 0 } },
-        { group: 'nodes', data: { id: 'c', label: 'cherry' }, position: { x: 200, y: 0 } }
+        { group: 'nodes', data: { id: '1', label: 'node1' }, position: { x: 0, y: 0 } },
+        { group: 'nodes', data: { id: '2', label: 'node2' }, position: { x: 100, y: 0 } },
+        { group: 'nodes', data: { id: '3', label: 'node3' }, position: { x: 200, y: 0 } }
     ]
 }
 

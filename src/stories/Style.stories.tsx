@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import { Button } from 'antd'
-// // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-// import { Story } from '@storybook/react/types-6-0'
 import { Cytoscape } from '../components/Cytoscape'
 import './scss/index.scss'
 
 const defaultElements = {
     nodes: [
-        { group: 'nodes', data: { id: 'a', label: 'apple' }, position: { x: 0, y: 0 } },
-        { group: 'nodes', data: { id: 'b', label: 'banana' }, position: { x: 100, y: 0 } },
-        { group: 'nodes', data: { id: 'c', label: 'cherry' }, position: { x: 200, y: 0 } }
+        { group: 'nodes', data: { id: '1', label: 'node1' }, position: { x: 0, y: 0 } },
+        { group: 'nodes', data: { id: '2', label: 'node2' }, position: { x: 100, y: 0 } },
+        { group: 'nodes', data: { id: '3', label: 'node3' }, position: { x: 200, y: 0 } }
     ]
 }
 
@@ -50,17 +48,18 @@ export const Primary = () => {
     const [elements, setElements] = useState(defaultElements)
 
     const handleClick = () => {
+        const nextId = elements.nodes.length + 1
         setElements({
             ...elements,
             nodes: [
                 ...elements.nodes,
-                { group: 'nodes', data: { id: 'd', label: 'orange' }, position: { x: 100, y: 100 } }
+                {
+                    group: 'nodes',
+                    data: { id: nextId.toString(), label: `node${nextId}` },
+                    position: { x: 100, y: 100 }
+                }
             ]
         })
-    }
-
-    const handleUpdate = ({ elements }) => {
-        setElements(elements)
     }
 
     const handleUpdateData = () => {
@@ -70,8 +69,8 @@ export const Primary = () => {
     return (
         <div className="default-demo">
             <Button onClick={handleClick}>新增节点</Button>
-            <Button onClick={handleUpdateData}>更新节点Data</Button>
-            <Cytoscape global="cy" elements={elements} onUpdate={handleUpdate} stylesheet={style} />
+            <Button onClick={handleUpdateData}>更新节点Color</Button>
+            <Cytoscape global="cy" elements={elements} stylesheet={style} />
         </div>
     )
 }

@@ -11,6 +11,14 @@ $slider-active-color: #4A62E7;
     height: 100%;
 }
 
+.cr-cytoscape .cr-cytoscape-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .cr-cytoscape-popper-div{
     z-index: 1;
 }

@@ -5,7 +5,7 @@ import cytoscape from 'cytoscape'
 import panzoom from 'cytoscape-panzoom' // 缩放
 import navigator from 'cytoscape-navigator' // 导航器
 import { ICytoscapeProps } from '../types/Cytoscape.types'
-import { patch, patchLayout } from '../libs/patch'
+import { patch } from '../libs/patch'
 import Navigator from './Navigator'
 import { bindEvent } from '../libs/bindEvent'
 import defaultPanzoomConfig from '../configs/panzoomConfig'
@@ -23,13 +23,13 @@ export class Cytoscape extends React.Component<ICytoscapeProps> {
     public cy: any
     private _cyContainerRef: React.RefObject<HTMLDivElement>
     private _navigator: any
-    private _cyCacheData: React.RefObject<ICytoscapeProps>
+    private _cyCachedData: React.RefObject<ICytoscapeProps>
 
     constructor(props: ICytoscapeProps) {
         super(props)
         this._id = uuidv4()
         this._cyContainerRef = React.createRef()
-        this._cyCacheData = React.createRef()
+        this._cyCachedData = React.createRef()
     }
 
     componentDidMount(): void {
@@ -112,16 +112,6 @@ export class Cytoscape extends React.Component<ICytoscapeProps> {
         this.cy.destroy()
     }
 
-    // afterChange = () => {
-    //     const { onUpdate } = this.props
-    //     const {
-    //         elements: { nodes = [], edges = [] },
-    //         ...others
-    //     } = this._cy.json()
-    //     this._cyCacheData.current = { ...others, elements: { nodes, edges } }
-    //     onUpdate && onUpdate(this._cyCacheData.current)
-    // }
-
     initPanzoom = panzoom => {
         const { minZoom, maxZoom } = this.props
         const { sliderHandleIcon, zoomInIcon, zoomOutIcon, ...customOthers } = panzoom
@@ -149,15 +139,11 @@ export class Cytoscape extends React.Component<ICytoscapeProps> {
         this._navigator = this.cy.navigator(config)
     }
 
-    changeLayout = layout => {
-        const { layoutSelected } = this.props
-        patchLayout(this.cy, layout, layoutSelected)
-    }
-
     render(): JSX.Element | null {
         const { className, navigator: navigatorConfig, panzoom: panzoomConfig = false } = this.props
 
         let cls = ''
+
         if (typeof panzoomConfig === 'object') {
             const { mode, size } = panzoomConfig
             if (mode) {
@@ -170,7 +156,7 @@ export class Cytoscape extends React.Component<ICytoscapeProps> {
 
         return (
             <div className={classNames('cr-cytoscape', className, cls)}>
-                <div ref={this._cyContainerRef} style={{ height: '100%' }} />
+                <div ref={this._cyContainerRef} className="cr-cytoscape-container" />
                 {navigatorConfig && <Navigator parentId={this._id} {...navigatorConfig} />}
             </div>
         )

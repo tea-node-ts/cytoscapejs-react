@@ -91,10 +91,10 @@ const Navigator: React.FC<INavigator> = props => {
     return (
         <div
             ref={containerRef}
-            className={classnames('navigator-cytoscape-cr', props.className || '')}
+            className={classnames('cr-cytoscape-navigator', props.className || '')}
             onDoubleClick={handleDoubleClick}
         >
-            <div ref={headerRef} className={classnames('header-navigator-cytoscape-cr', props.headerClassName || '')}>
+            <div ref={headerRef} className={classnames('cr-cytoscape-navigator-header', props.headerClassName || '')}>
                 导航器
             </div>
             <div id={`navigator-${props.parentId}`} className="cytoscape-navigator" role="presentation" />

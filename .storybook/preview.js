@@ -4,7 +4,6 @@ import {
   Subtitle,
   Description,
   Primary,
-  Props,
   Stories,
   PRIMARY_STORY,
   ArgsTable 
@@ -27,5 +26,3 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: { expanded: true },
 }
-
-// export const decorators = [(Story) => <div style={{ margin: 0, height: '400px' }}><Story/></div>];

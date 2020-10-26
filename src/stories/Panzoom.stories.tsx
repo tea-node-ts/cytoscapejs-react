@@ -18,9 +18,9 @@ interface IProps {
 
 const defaultElements = {
     nodes: [
-        { group: 'nodes', data: { id: 'a', label: 'apple' }, position: { x: 0, y: 0 } },
-        { group: 'nodes', data: { id: 'b', label: 'banana' }, position: { x: 100, y: 0 } },
-        { group: 'nodes', data: { id: 'c', label: 'cherry' }, position: { x: 200, y: 0 } }
+        { group: 'nodes', data: { id: '1', label: 'node1' }, position: { x: 0, y: 0 } },
+        { group: 'nodes', data: { id: '2', label: 'node2' }, position: { x: 100, y: 0 } },
+        { group: 'nodes', data: { id: '3', label: 'node3' }, position: { x: 200, y: 0 } }
     ]
 }
 
@@ -49,11 +49,11 @@ noPanzoom.args = {
 }
 noPanzoom.storyName = '不显示缩放栏'
 
-export const small = () => {
+export const Small = () => {
     return (
         <div className="simple-demo">
             <Cytoscape elements={defaultElements} panzoom={{ mode: 'small' }} />
         </div>
     )
 }
-small.storyName = '精简模式'
+Small.storyName = '精简模式'
