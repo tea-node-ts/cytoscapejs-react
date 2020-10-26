@@ -1,3 +1,1 @@
-import Cytoscape from './components/Cytoscape';
-
-export { Cytoscape }
+export * from './components/index'
