@@ -1,4 +1,11 @@
-.rc-container {
+$btn-bg-color: #fff;
+$text-color: #4a62e7;
+$slider-bg-color: #d8d8d8;
+$slider-active-color: #4a62e7;
+
+@import './panzoom';
+
+.cytoscape-container {
   position: relative;
   overflow: hidden;
   height: 100%;
