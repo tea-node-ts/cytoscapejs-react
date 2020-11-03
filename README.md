@@ -1,5 +1,11 @@
 # cytoscapejs-react
 
+## How to install
+
+```
+npm install -D cytoscapejs-react
+```
+
 ## How to view example
 
 1. Install dependencies in root directory
