@@ -8,26 +8,32 @@ npm install -D cytoscapejs-react
 
 ## How to view example
 
-1. Install dependencies in root directory
+1. git clone codes
+
+```
+git clone https://github.com/tea-node-ts/cytoscapejs-react.git
+cd cytoscapejs-react
+```
+
+2. Install dependencies in cytoscapejs-react directory
 
 ```
 npm install
+npm run start
 ```
 
-2. Install example dependencies in example directory
+3. Install example dependencies in example directory
 
 ```
 cd example
 npm install
-npm run build
+npm run start
 ```
 
-3. view example in browser
+4. view example in browser
 
 ```
-npm run start // in example directory
-
-open http://127.0.0.1:1234 in browser
+open http://127.0.0.1:1234
 ```
 
 ## How to test
