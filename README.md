@@ -1,4 +1,4 @@
-# cytoscape-react
+# cytoscapejs-react
 
 ## How to view example
 

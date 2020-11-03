@@ -5,4 +5,5 @@ export interface Callbacks {
   onDblClick?: (event: any, eventFrom: string) => void;
   onClick?: (event: any, eventFrom: string) => void;
   onCxtTap?: (event: any, eventFrom: string) => void;
+  onLayoutStop?: () => void;
 }

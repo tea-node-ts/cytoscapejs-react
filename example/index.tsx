@@ -101,21 +101,64 @@ const panzoomOptions = {
 };
 
 const App = () => {
+  const [layout, setLayout] = React.useState(defaultLayout);
+
   const handleInit = (cy) => {
     console.log('inited');
   }
 
+  const hanldeDblClick = (event, eventFrom) => {
+    console.log('dblclick:', event, eventFrom);
+  }
+
+  const handleClick = (event, eventFrom) => {
+    console.log('click:', event, eventFrom);
+  };
+
+  const handleCxtTap = (event, eventFrom) => {
+    console.log('cxttap: ', event, eventFrom);
+  };
+
+  const handleLayoutStop = () => {
+    console.log('layoutStop: ', layout);
+  }
+
+  const handleLayoutChange = layoutName => {
+    const newLayout = {
+      name: layoutName,
+    };
+
+    setLayout(newLayout);
+  };
+  const spanStyle ={display:'inline-block',paddingRight: '5px'};
+  const ulStyle = {display:'inline-block', listStyle: 'none', margin: 0, padding: 0};
+  const liStyle = {display:'inline-block',padding: '5px', border: '1px solid #efefef', cursor: 'pointer'};
   return (
     <div>
+      <div>
+        <span style={spanStyle}>Layout: </span>
+        <ul style={ulStyle}>
+          <li style={liStyle} onClick={() => handleLayoutChange('cola')}>cola</li>
+          <li style={liStyle} onClick={() => handleLayoutChange('breadthfirst')}>breadthfirst</li>
+          <li style={liStyle} onClick={() => handleLayoutChange('circle')}>circle</li>
+          <li style={liStyle} onClick={() => handleLayoutChange('concentric')}>concentric</li>
+          <li style={liStyle} onClick={() => handleLayoutChange('cose')}>cose</li>
+          <li style={liStyle} onClick={() => handleLayoutChange('grid')}>grid</li>
+        </ul>
+      </div>
       <CytoscapeComponent
         global={"cy"}
         elements={defaultElements} 
         stylesheets={stylesheets}
-        layout={defaultLayout}
+        layout={layout}
         navigator={true}
         panzoom={panzoomOptions}
         extensions={[cola]}
         onInit={handleInit}
+        onClick={handleClick}
+        onDblClick={hanldeDblClick}
+        onCxtTap={handleCxtTap}
+        onLayoutStop={handleLayoutStop}
       />
     </div>
   );
