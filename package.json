@@ -89,13 +89,16 @@
     "cytoscape-navigator": "^2.0.1",
     "cytoscape-panzoom": "^2.5.3",
     "lodash": "^4.17.20",
+    "lodash-es": "^4.17.15",
     "uuid": "^8.3.1"
   },
   "jest": {
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
     },
-    "setupFiles": ["jest-canvas-mock"]
+    "setupFiles": [
+      "jest-canvas-mock"
+    ]
   },
   "keywords": [
     "cytoscape",
