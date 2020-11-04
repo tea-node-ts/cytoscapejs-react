@@ -55,7 +55,7 @@ export const patch = (
     ].forEach((key) => {
       const oldValue = (prevProps as any)[key];
       const newValue = (props as any)[key];
-      if (newValue !== undefined && isEqual(oldValue, newValue)) {
+      if (newValue !== undefined && !isEqual(oldValue, newValue)) {
         patchJson(cy, key, newValue);
       }
     });
