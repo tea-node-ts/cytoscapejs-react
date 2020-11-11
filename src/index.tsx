@@ -46,8 +46,8 @@ export class CytoscapeComponent extends React.Component<
       events,
       onInit,
       extensions,
-      navigator: navigatorOptions,
       panzoom: panzoomOptions,
+      navigator: navigatorOptions,
       ...otherProps
     } = this.props;
 
